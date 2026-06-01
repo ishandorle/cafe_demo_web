@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { QRCodeSVG } from 'qrcode.react';
 import { 
   Coffee, 
   MapPin, 
@@ -464,64 +465,31 @@ function App() {
               </div>
 
               <div className="bg-cream-light p-6 rounded-2xl inline-block shadow-inner mb-6 relative group-hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-shadow duration-500">
-                {/* Simulated Stylized QR Code using beautiful SVG paths */}
-                <svg className="w-48 h-48 text-coffee-darkest" viewBox="0 0 100 100" fill="currentColor">
-                  {/* Outer corner squares */}
-                  <rect x="0" y="0" width="25" height="25" rx="3" />
-                  <rect x="5" y="5" width="15" height="15" fill="white" />
-                  <rect x="8" y="8" width="9" height="9" />
-                  
-                  <rect x="75" y="0" width="25" height="25" rx="3" />
-                  <rect x="80" y="5" width="15" height="15" fill="white" />
-                  <rect x="83" y="8" width="9" height="9" />
-
-                  <rect x="0" y="75" width="25" height="25" rx="3" />
-                  <rect x="5" y="80" width="15" height="15" fill="white" />
-                  <rect x="8" y="83" width="9" height="9" />
-
-                  {/* Randomized pixel layout representing a luxury coffee cup in QR grid */}
-                  <rect x="35" y="0" width="5" height="5" />
-                  <rect x="45" y="0" width="10" height="5" />
-                  <rect x="60" y="0" width="5" height="10" />
-                  <rect x="40" y="10" width="5" height="5" />
-                  <rect x="50" y="10" width="10" height="5" />
-                  <rect x="35" y="20" width="15" height="5" />
-                  <rect x="55" y="20" width="5" height="10" />
-                  
-                  <rect x="0" y="35" width="5" height="15" />
-                  <rect x="10" y="35" width="5" height="5" />
-                  <rect x="20" y="35" width="10" height="5" />
-                  <rect x="15" y="45" width="15" height="5" />
-                  <rect x="0" y="55" width="10" height="5" />
-                  <rect x="15" y="55" width="5" height="10" />
-                  <rect x="25" y="50" width="5" height="10" />
-
-                  {/* Coffee center icon simulation */}
-                  <circle cx="50" cy="50" r="12" fill="white" />
-                  <circle cx="50" cy="50" r="9" className="text-gold" />
-                  
-                  {/* Right side pixel cluster */}
-                  <rect x="75" y="35" width="10" height="5" />
-                  <rect x="90" y="35" width="10" height="5" />
-                  <rect x="80" y="45" width="5" height="15" />
-                  <rect x="95" y="45" width="5" height="10" />
-                  <rect x="75" y="60" width="5" height="5" />
-                  <rect x="85" y="60" width="15" height="5" />
-                  
-                  {/* Bottom center pixel cluster */}
-                  <rect x="35" y="75" width="5" height="15" />
-                  <rect x="45" y="75" width="15" height="5" />
-                  <rect x="65" y="75" width="5" height="10" />
-                  <rect x="40" y="85" width="15" height="5" />
-                  <rect x="60" y="85" width="5" height="15" />
-                  <rect x="35" y="95" width="10" height="5" />
-                  <rect x="50" y="90" width="5" height="10" />
-                </svg>
+                <QRCodeSVG
+                  value="https://cafe-demo-web.vercel.app/#menu"
+                  size={192}
+                  bgColor="transparent"
+                  fgColor="#120A07"
+                  level="H"
+                />
 
                 {/* Micro branding in QR */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-coffee border-2 border-gold flex items-center justify-center">
                   <Coffee className="w-4.5 h-4.5 text-gold" />
                 </div>
+              </div>
+
+              {/* Open Digital Menu Button */}
+              <div className="mb-4">
+                <a 
+                  href="https://cafe-demo-web.vercel.app/#menu" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-gold text-xs py-1.5 px-4 inline-flex items-center gap-1.5 active:scale-95 transition-all"
+                >
+                  Open Digital Menu
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
 
               <h4 className="text-xl font-bold text-cream-light mb-1">QR Menu Demo</h4>
@@ -1022,27 +990,14 @@ function App() {
               <X className="w-4 h-4" />
             </button>
 
-            <div className="bg-cream-light p-5 rounded-2xl inline-block shadow-inner mb-6">
-              {/* Simulated QR Code inside modal */}
-              <svg className="w-44 h-44 text-coffee-darkest" viewBox="0 0 100 100" fill="currentColor">
-                <rect x="0" y="0" width="25" height="25" rx="3" />
-                <rect x="5" y="5" width="15" height="15" fill="white" />
-                <rect x="8" y="8" width="9" height="9" />
-                <rect x="75" y="0" width="25" height="25" rx="3" />
-                <rect x="80" y="5" width="15" height="15" fill="white" />
-                <rect x="83" y="8" width="9" height="9" />
-                <rect x="0" y="75" width="25" height="25" rx="3" />
-                <rect x="5" y="80" width="15" height="15" fill="white" />
-                <rect x="8" y="83" width="9" height="9" />
-                <rect x="35" y="0" width="5" height="5" />
-                <rect x="45" y="0" width="10" height="5" />
-                <rect x="60" y="0" width="5" height="10" />
-                <rect x="40" y="10" width="5" height="5" />
-                <rect x="50" y="10" width="10" height="5" />
-                <rect x="35" y="20" width="15" height="5" />
-                <circle cx="50" cy="50" r="12" fill="white" />
-                <circle cx="50" cy="50" r="9" className="text-gold" />
-              </svg>
+            <div className="bg-cream-light p-5 rounded-2xl inline-block shadow-inner mb-6 relative">
+              <QRCodeSVG
+                value="https://cafe-demo-web.vercel.app/#menu"
+                size={176}
+                bgColor="transparent"
+                fgColor="#120A07"
+                level="H"
+              />
             </div>
 
             <h3 className="text-2xl font-bold text-cream-light mb-2">Simulated QR Code</h3>
